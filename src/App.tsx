@@ -17,7 +17,7 @@ function App() {
     // try... catch documentation:
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
     try {
-      const res = await fetch(`http://localhost:4000${endpoint}`);
+      const res = await fetch(`https://sheltered-coast-42898.herokuapp.com${endpoint}`);
       const body = await res.json();
       setMessage(body.description);
       setDigipetStats(body.digipet);
@@ -57,16 +57,16 @@ function App() {
           },
           { name: "Feed",
           handler: () => loadDataFromEndpoint("/digipet/feed") 
-        },
-        { name: "Train",
-        handler: () => loadDataFromEndpoint("/digipet/train") 
-      },
-      { name: "ignore",
-      handler: () => loadDataFromEndpoint("/digipet/ignore") 
-    },
-    { name: "Rehome",
-    handler: () => loadDataFromEndpoint("/digipet/rehome") 
-  },
+          },
+          { name: "Train",
+          handler: () => loadDataFromEndpoint("/digipet/train") 
+          },
+          { name: "ignore",
+          handler: () => loadDataFromEndpoint("/digipet/ignore") 
+          },
+          { name: "Rehome",
+          handler: () => loadDataFromEndpoint("/digipet/rehome") 
+          },
         ]}
       />
     </main>
